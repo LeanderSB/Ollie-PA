@@ -1,0 +1,194 @@
+/* Estilo global */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4; /* Cor de fundo padrão */
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 500%;
+    background-image: url('Ollie-bra.jpg');
+    background-size: contain; /* Ajusta a imagem para caber na tela */
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.5; /* Sombreado transparente */
+    z-index: -1; /* Coloca a imagem atrás do conteúdo */
+}
+
+.header-container {
+    width: 100%;
+    background-color: #000; /* Fundo preto */
+    padding: 20px;
+    box-sizing: border-box; /* Inclui padding na largura total */
+    color: #fff; /* Cor do texto branca */
+    text-align: center; /* Centraliza o texto */
+}
+
+h1 {
+    margin: 0; /* Remove a margem padrão */
+    font-weight: 800;
+}
+
+#fileInput {
+    display: block;
+    margin: 20px left;
+    padding: 20px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    max-width: 300px;
+    background-color: rgba(250, 250, 250, 0.212); /* Fundo branco com transparência */
+}
+
+#fileInput:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.pedido-item {
+    background-color: rgb(255, 255, 255); /* Fundo branco com transparência */
+    border: 1px solid #686868;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    border-radius: 5px;
+    display: inline-block;
+    box-shadow: 0 4px 8px rgb(5, 5, 5);
+    transform: perspective(500px) rotateY(10deg);
+}
+
+.pedido-item:hover {
+    background-color: rgba(68, 68, 68, 0.9);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: perspective(500px) rotateY(0deg);
+}
+
+.pedido-verde {
+    background-color: #b2e9bf;
+    border-color: #85e49b;
+}
+
+.pedido-vermelho {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo branco com transparência */
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    display: none;
+    z-index: 1000;
+    width: 80%;
+    max-width: 600px;
+    max-height: 80vh; /* Adiciona altura máxima */
+    border-radius: 8px;
+    overflow-y: auto; /* Adiciona rolagem vertical */
+}
+
+.close-btn {
+    float: right;
+    cursor: pointer;
+    font-size: 24px;
+    color: #aaa;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: #9e0b0b;
+}
+
+#fichaInput {
+    display: block;
+    margin: 20px 0;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.container {
+    border: 1px solid #333;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    background-color: #000;
+    color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column; /* Layout vertical */
+}
+
+.modelo, .cor {
+    margin: 5px 0;
+}
+
+.riscado {
+    text-decoration: line-through;
+    color: #999;
+}
+
+/* Media Queries */
+
+/* Telas pequenas (ex: celulares em modo retrato) */
+@media (max-width: 600px) {
+    #fileInput {
+        max-width: 100%; /* Ajusta a largura do input para telas menores */
+    }
+
+    .popup {
+        width: 90%; /* Aumenta a largura do popup em telas menores */
+        padding: 10px; /* Reduz o padding em telas menores */
+    }
+
+    .pedido-item {
+        padding: 8px; /* Reduz o padding dos itens do pedido */
+    }
+
+    h1 {
+        font-size: 24px; /* Ajusta o tamanho da fonte do título */
+    }
+}
+
+/* Telas médias (ex: tablets) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    #fileInput {
+        max-width: 70%; /* Ajusta a largura do input para tablets */
+    }
+
+    .popup {
+        width: 85%; /* Ajusta a largura do popup em tablets */
+    }
+
+    h1 {
+        font-size: 28px; /* Ajusta o tamanho da fonte do título */
+    }
+}
+
+/* Telas grandes (ex: notebooks, desktops) */
+@media (min-width: 1025px) {
+    #fileInput {
+        max-width: 50%; /* Ajusta a largura do input para telas grandes */
+    }
+
+    .popup {
+        width: 70%; /* Ajusta a largura do popup para telas grandes */
+    }
+
+    h1 {
+        font-size: 32px; /* Ajusta o tamanho da fonte do título */
+    }
+}

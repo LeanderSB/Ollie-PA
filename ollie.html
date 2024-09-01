@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Pedidos</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+    <div class="header-container">
+        <h1>Lista de Pedidos</h1>
+    </div>
+    <input type="file" id="fileInput" />
+    <div id="pedidoList"></div>
+
+    <!-- Estrutura do Popup -->
+    <div id="popup" class="popup">
+        <span class="close-btn" onclick="closePopup()">×</span>
+        <h2>Detalhes do Pedido</h2>
+        <div id="pedidoItens"></div>
+        <input type="text" id="fichaInput" placeholder="Digite a ficha (AK-AL)" />
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="scripts.js"></script> 
+</body>
+</html>
